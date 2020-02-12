@@ -1,5 +1,5 @@
-require "inspec/resources/command"
-require "inspec/utils/database_helpers"
+require_relative "command"
+require_relative "../utils/database_helpers"
 require "htmlentities"
 require "rexml/document"
 require "hashie/mash"

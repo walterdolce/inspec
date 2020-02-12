@@ -4,7 +4,7 @@ require "pathname"
 require "set"
 require "tempfile"
 require "yaml"
-require "inspec/dist"
+require_relative "../../../../inspec/dist"
 
 module InspecPlugins
   module Artifact

@@ -1,4 +1,4 @@
-require "inspec/plugin/v1"
+require_relative "plugin/v1"
 
 module Inspec
   class FetcherRegistry < PluginRegistry
@@ -40,6 +40,6 @@ module Inspec
 end
 
 # TODO: remove. require up, not down.
-require "inspec/fetcher/local"
-require "inspec/fetcher/url"
-require "inspec/fetcher/git"
+require_relative "fetcher/local"
+require_relative "fetcher/url"
+require_relative "fetcher/git"

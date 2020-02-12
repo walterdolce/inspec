@@ -1,9 +1,9 @@
 # Copyright 2015 Dominik Richter
 
-require "inspec/utils/deprecation/deprecator"
-require "inspec/dist"
-require "inspec/backend"
-require "inspec/dependencies/cache"
+require_relative "utils/deprecation/deprecator"
+require_relative "dist"
+require_relative "backend"
+require_relative "dependencies/cache"
 
 module Inspec # TODO: move this somewhere "better"?
   autoload :BaseCLI,       "inspec/base_cli"
@@ -377,7 +377,7 @@ class Inspec::InspecCLI < Inspec::BaseCLI
 
   desc "schema NAME", "print the JSON schema", hide: true
   def schema(name)
-    require "inspec/schema/output_schema"
+    require_relative "schema/output_schema"
 
     puts Inspec::Schema::OutputSchema.json(name)
   rescue StandardError => e
@@ -436,7 +436,7 @@ end
 #---------------------------------------------------------------------#
 # Plugin Loading
 #---------------------------------------------------------------------#
-require "inspec/plugin/v2"
+require_relative "plugin/v2"
 
 begin
   # Load v2 plugins.  Manually check for plugin disablement.
