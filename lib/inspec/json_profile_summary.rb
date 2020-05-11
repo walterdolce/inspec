@@ -2,7 +2,7 @@
 
 module Inspec
   #
-  # Inspec::InspecCLI::JsonProfileSummary takes in certain information to identify a
+  # Inspec::JsonProfileSummary takes in certain information to identify a
   # profile and then produces a JSON-formatted summary of that profile. It can
   # return the results to STDOUT or a file. It is currently used in several
   # places in the CLI such as `json`, `archive` and `artifact`.
