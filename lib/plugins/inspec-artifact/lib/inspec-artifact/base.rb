@@ -174,8 +174,6 @@ module InspecPlugins
         end
       end
 
-      private
-
       def self.write_inspec_json(root_path, opts)
         profile = Inspec::Profile.for_path(root_path, opts)
         Inspec::JsonProfileSummary.produce_json(

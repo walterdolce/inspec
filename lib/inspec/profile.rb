@@ -488,12 +488,12 @@ module Inspec
         # generate zip archive
         require "inspec/archive/zip"
         zag = Inspec::Archive::ZipArchiveGenerator.new
-        zag.archive(root_path, files.push('inspec.json'), dst)
+        zag.archive(root_path, files.push("inspec.json"), dst)
       else
         # generate tar archive
         require "inspec/archive/tar"
         tag = Inspec::Archive::TarArchiveGenerator.new
-        tag.archive(root_path, files.push('inspec.json'), dst)
+        tag.archive(root_path, files.push("inspec.json"), dst)
       end
 
       # Cleanup
