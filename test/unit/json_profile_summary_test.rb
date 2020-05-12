@@ -6,7 +6,6 @@ require "inspec/json_profile_summary"
 describe "JsoneProfileSummary" do
   let(:profile_summary) { Inspec::JsonProfileSummary }
   let(:info) { { test: "information" } }
-  let(:file_mock) { Minitest::Mock.new }
 
   describe "writes JSON to file" do
     it "writes json to file" do
