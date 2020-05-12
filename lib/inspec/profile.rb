@@ -466,7 +466,7 @@ module Inspec
       end
 
       # remove existing archive
-      File.delete(dst) if dst.exist?
+      FileUtils.rm_f(dst) if dst.exist?
       @logger.info "Generate archive #{dst}."
 
       # filter files that should not be part of the profile
@@ -497,7 +497,7 @@ module Inspec
       end
 
       # Cleanup
-      File.delete("#{root_path}inspec.json")
+      FileUtils.rm_f("#{root_path}inspec.json")
 
       @logger.info "Finished archive generation."
       true
