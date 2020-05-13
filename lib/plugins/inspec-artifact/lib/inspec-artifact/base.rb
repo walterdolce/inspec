@@ -178,7 +178,7 @@ module InspecPlugins
         profile = Inspec::Profile.for_path(root_path, opts)
         Inspec::Utils::JsonProfileSummary.produce_json(
           info: profile.info,
-          write_directory: "#{root_path}/inspec.json",
+          write_path: "#{root_path}/inspec.json",
           suppress_output: true
         )
       end

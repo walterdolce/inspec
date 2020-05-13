@@ -83,7 +83,7 @@ class Inspec::InspecCLI < Inspec::BaseCLI
     # Write JSON
     Inspec::Utils::JsonProfileSummary.produce_json(
       info: profile.info,
-      write_directory: dst
+      write_path: dst
     )
   rescue StandardError => e
     pretty_handle_exception(e)

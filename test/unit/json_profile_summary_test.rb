@@ -15,7 +15,7 @@ describe "JsoneProfileSummary" do
         ) {
           profile_summary.produce_json(
             info: info,
-            write_directory: "#{dir}/inspec-test.json"
+            write_path: "#{dir}/inspec-test.json"
           )
         }
         assert File.file?("#{dir}/inspec-test.json")
@@ -27,7 +27,7 @@ describe "JsoneProfileSummary" do
         assert_output("") {
           profile_summary.produce_json(
             info: info,
-            write_directory: "#{dir}/inspec-test.json",
+            write_path: "#{dir}/inspec-test.json",
             suppress_output: true
           )
         }

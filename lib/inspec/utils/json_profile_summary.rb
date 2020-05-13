@@ -10,14 +10,14 @@ module Inspec
     #
     #
     module JsonProfileSummary
-      def self.produce_json(info:, write_directory: "", suppress_output: false, logger:)
+      def self.produce_json(info:, write_path: "", suppress_output: false, logger:)
         @logger = logger || Logger.new
         # add in inspec version
         info[:generator] = {
           name: "inspec",
           version: Inspec::VERSION,
         }
-        if write_directory.empty?
+        if write_path.empty?
           puts JSON.dump(info)
         else
           unless suppress_output
@@ -27,7 +27,7 @@ module Inspec
               @logger.info "----> creating #{dst}"
             end
           end
-          fdst = File.expand_path(write_directory)
+          fdst = File.expand_path(write_path)
           File.write(fdst, JSON.dump(info))
         end
       end

@@ -475,7 +475,7 @@ module Inspec
       # Generate temporary inspec.json for archive
       Inspec::Utils::JsonProfileSummary.produce_json(
         info: info,
-        write_directory: "#{root_path}inspec.json",
+        write_path: "#{root_path}inspec.json",
         suppress_output: true
       )
 
