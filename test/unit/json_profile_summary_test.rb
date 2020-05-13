@@ -13,10 +13,10 @@ describe "JsoneProfileSummary" do
         assert_output(
           "----> creating #{dir}/inspec-test.json\n"
         ) {
-            profile_summary.produce_json(
-              info: info,
-              dst: "#{dir}/inspec-test.json"
-            )
+          profile_summary.produce_json(
+            info: info,
+            dst: "#{dir}/inspec-test.json"
+          )
         }
         assert File.file?("#{dir}/inspec-test.json")
       end
