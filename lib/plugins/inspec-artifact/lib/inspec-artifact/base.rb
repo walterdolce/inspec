@@ -5,7 +5,7 @@ require "set"
 require "tempfile"
 require "yaml"
 require "inspec/dist"
-require "inspec/json_profile_summary"
+require "inspec/utils/json_profile_summary"
 
 module InspecPlugins
   module Artifact
@@ -176,9 +176,9 @@ module InspecPlugins
 
       def self.write_inspec_json(root_path, opts)
         profile = Inspec::Profile.for_path(root_path, opts)
-        Inspec::JsonProfileSummary.produce_json(
+        Inspec::Utils::JsonProfileSummary.produce_json(
           info: profile.info,
-          dst: "#{root_path}/inspec.json",
+          write_directory: "#{root_path}/inspec.json",
           suppress_output: true
         )
       end

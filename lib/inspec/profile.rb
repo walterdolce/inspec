@@ -12,7 +12,7 @@ require "inspec/method_source"
 require "inspec/dependencies/cache"
 require "inspec/dependencies/lockfile"
 require "inspec/dependencies/dependency_set"
-require "inspec/json_profile_summary"
+require "inspec/utils/json_profile_summary"
 
 module Inspec
   class Profile
@@ -473,9 +473,9 @@ module Inspec
       # TODO ignore all .files, but add the files to debug output
 
       # Generate temporary inspec.json for archive
-      Inspec::JsonProfileSummary.produce_json(
+      Inspec::Utils::JsonProfileSummary.produce_json(
         info: info,
-        dst: "#{root_path}inspec.json",
+        write_directory: "#{root_path}inspec.json",
         suppress_output: true
       )
 

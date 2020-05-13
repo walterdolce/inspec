@@ -1,10 +1,10 @@
 # copyright: 2020, Chef Software Inc.
 
 require "helper"
-require "inspec/json_profile_summary"
+require "inspec/utils/json_profile_summary"
 
 describe "JsoneProfileSummary" do
-  let(:profile_summary) { Inspec::JsonProfileSummary }
+  let(:profile_summary) { Inspec::Utils::JsonProfileSummary }
   let(:info) { { test: "information" } }
 
   describe "writes JSON to file" do
@@ -15,7 +15,7 @@ describe "JsoneProfileSummary" do
         ) {
           profile_summary.produce_json(
             info: info,
-            dst: "#{dir}/inspec-test.json"
+            write_directory: "#{dir}/inspec-test.json"
           )
         }
         assert File.file?("#{dir}/inspec-test.json")
@@ -27,7 +27,7 @@ describe "JsoneProfileSummary" do
         assert_output("") {
           profile_summary.produce_json(
             info: info,
-            dst: "#{dir}/inspec-test.json",
+            write_directory: "#{dir}/inspec-test.json",
             suppress_output: true
           )
         }
